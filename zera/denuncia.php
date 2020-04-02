@@ -6,7 +6,7 @@
     <link rel="shortcut icon" href="img/icon/favicon.ico" />
     <title>Denunciar Foco</title>
 
-    <meta http-equiv="refresh" content="10; url=denuncia.php">
+    <!-- <meta http-equiv="refresh" content="10; url=denuncia.php"> -->
     <!-- essa linha é só para testes, ela reinicia a página a cada 1 segundo -->
 
     <link rel="stylesheet" href="/css/denuncia.css">
@@ -20,7 +20,7 @@
     ?>
     <div class="container">        
         <div class="form-group">
-            <form action="denunciar_banco.php" method="POST">
+            <form action="banco/denuncia_banco.php" method="POST">
                 <fieldset>
                     <legend>Denunciar Foco do Mosquito da Dengue:</legend>
                 <div class="form-row">

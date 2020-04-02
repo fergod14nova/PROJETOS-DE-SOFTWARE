@@ -10,11 +10,13 @@
         include_once "header.php";
     ?>
     <div class="container">
+    <div class="table-responsive">
         
         <h2>usuário:</h2>
-        <table class="table">
+        <table class="table table-striped table-hover">
+            <caption>Tabela de denuncias</caption>
             <!-- Iniciando a tabela -->
-            <thead>
+            <thead class="thead-dark">
                 <!-- Cabeçalho da tabela -->
                 <tr>
                     <!-- Primeira linha -->
@@ -41,6 +43,7 @@
                 </tr>
             </tbody>
         </table>
+    </div>
     </div>
 </body>
 </html>

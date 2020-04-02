@@ -68,10 +68,11 @@
     </style>
 </head>
 <body>
+    
     <div class="container">
         
         <div class="form-group">
-            <form action="cadastro_banco.php" method="POST">
+            <form action="/banco/cadastro_banco.php" method="POST">
             <a href="index.php"><img src="img/logo.png" alt="" id="logo" class="img-fluid"></a>
                 <!-- o comando acima esta direcionando os dados para um arquivo chamado de cadastro_banco.php, o método de envio é POST -->
                 <div class="dropdown-divider"></div>
@@ -107,7 +108,7 @@
                         </div>
                         <div class="form-group col-sm-2">
                             <label for="num">Nº:</label>
-                            <input type="number" name="num" id="" class="form-control" placeholder="666">
+                            <input type="text" name="num" id="" class="form-control" placeholder="666">
                         </div>
                         <div class="form-group col-sm-3">
                             <label for="logradouro">Logradouro:</label>
@@ -169,7 +170,7 @@
                     <div class="form-row">
                         <div class="form-group col-sm-1">
                             <label for="ddd">DDD:</label>
-                            <input type="number" name="ddd" id="" default="88" minlength="2" maxlength="3" placeholder="74" class="form-control">
+                            <input type="text" name="ddd" id="" default="88" minlength="2" maxlength="3" placeholder="74" class="form-control">
                         </div>
                         <div class="form-group col-sm-4">
                                 <label for="fone">Telefone:</label>

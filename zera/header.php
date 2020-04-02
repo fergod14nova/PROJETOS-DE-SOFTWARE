@@ -60,7 +60,7 @@
         <!-- Principal -->
         <div class="btn-group">
             <div class="dropdown">
-                <a href="home.php" class="btn btn-dark" role="button" id="dropdownMenuLink" aria-haspopup="true" aria-expanded="false">PÁGINA PRINCIPAL</a>
+                <a href="home.php" class="btn btn-dark btn-lg" role="button" id="dropdownMenuLink" aria-haspopup="true" aria-expanded="false">PÁGINA PRINCIPAL</a>
             </div>
         </div>
 
@@ -112,7 +112,7 @@
          -->
         <!-- Perfil do usuário -->
         <div class="btn-group">
-            <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button type="button" class="btn btn-lg btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 User
             </button>
             <div class="dropdown-menu">
