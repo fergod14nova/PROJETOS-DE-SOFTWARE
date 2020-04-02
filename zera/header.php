@@ -60,7 +60,7 @@
         <!-- Principal -->
         <div class="btn-group">
             <div class="dropdown">
-                <a href="index.php" class="btn btn-dark" role="button" id="dropdownMenuLink" aria-haspopup="true" aria-expanded="false">PÁGINA PRINCIPAL</a>
+                <a href="home.php" class="btn btn-dark" role="button" id="dropdownMenuLink" aria-haspopup="true" aria-expanded="false">PÁGINA PRINCIPAL</a>
             </div>
         </div>
 
@@ -71,9 +71,8 @@
             </button>
             <!-- opção do botão acima -->
             <div class="dropdown-menu">
-                <a href="#" class="dropdown-item">Contatos</a>
-                <a href="#" class="dropdown-item">Sistema Zera</a>
-                <a href="#" class="dropdown-item">Denunciar Abuso</a>
+                <a href="sobre.php" class="dropdown-item">Contatos</a>
+                <a href="zera.html" class="dropdown-item">Sistema Zera</a>
             </div>
         </div>
         <!-- fim do primeiro botão -->
@@ -85,8 +84,8 @@
             </button>
             <!-- opção do botão acima -->
             <div class="dropdown-menu">
-                <a href="#" class="dropdown-item">Nova Denúncia</a>
-                <a href="#" class="dropdown-item">Consultar Denúncia</a>
+                <a href="denuncia.php" class="dropdown-item">Nova Denúncia</a>
+                <a href="historico.php" class="dropdown-item">Consultar Denúncia</a>
             </div>
         </div>
         <!-- fim do  segundo botão -->

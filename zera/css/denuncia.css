@@ -1,0 +1,23 @@
+/* Como será feito a implamentação do banco de dados:
+
+os dados do usuário serão guardados em variáveis de JS ou mesmo o PHP, na hora de denunciar só será cobrado os dados referentes a denuncia, pois haverá duas tabelas:
+-Tabela usuarios: onde terá os dados do usuário;
+-Tabela denuncia: onde terá os dados da denuncia e uma chave strangeira com a id do usuário;
+
+a tabela denuncia terá os seguintes campos:
+-cod_denuncia (primary key) //auto-increment, not-null, primary key
+-cod_user (stranger key) //not-null e pegará o valor de uma variável PHP ou JS
+-desc (informações da denuncia)
+-local (referencia do local da denuncia)
+-status (enviado, análise, concluido) //esse campo só será auterado pelo adm
+-upload (imagens enviadas, máx 10mb)
+-resposta (a resposta enviada para o usuário, o default é null) //esse campo só será auterado pelo adm
+
+o campo resposta ficará em branco, cabe ao adm preencher esse campo e comunicar ao usuário sobre a atualização do campo.
+
+ao enviar a danuncia, ela irá aparecer na tela HISTORICO, utilizamos uma query para mostrar as denuncias vinculadas aquele usuário e mostraremos uma a baixo da outra.
+
+um usuário pode ter relações com várias denuncias;
+uma denuncia só pode ter associação a um usuário;
+
+o desafio será como obter a primarykey do usuário e aplicar ao formulário de denuncia... */

@@ -185,6 +185,7 @@
                         <li>Me responsabilizo por tudo o que fizer na plataforma;</li>
                         <li>Deixo a disposição informações pessoais e de Hardware;</li>
                         <li>Irei colaborar com a sociedade;</li>
+                        <li>Caso não tenha entendido ou precise de ajuda, clique aqui: <a href="sobre.php" class="btn btn-light">Preciso de ajuda!</a></li>
                     </ol>
                     <small class="form-text">Ao clicar em <b>"ACEITAR"</b> declaro ter lido e estar de acordo com os termos estabelecidos.</small>
                 </fieldset>
@@ -192,6 +193,7 @@
                 <div class="form-group">
                     <button type="submit" class="btn btn-success">Aceitar</button>
                     <a href="index.php" class="btn btn-danger">Cancelar</a>
+                    
                     
                 </div>
             </form>
