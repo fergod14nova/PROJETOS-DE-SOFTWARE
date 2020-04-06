@@ -20,9 +20,15 @@
     ?>
     <div class="container">        
         <div class="form-group">
-            <form action="banco/denuncia_banco.php" method="POST">
+            <form action="banco/denuncia_banco.php" method="POST" enctype="multipart/form-data">
                 <fieldset>
                     <legend>Denunciar Foco do Mosquito da Dengue:</legend>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="ek">Digite seu CPF:</label>
+                        <input type="text" name="stranger" id="" class="form-control">
+                    </div>
+                </div>
                 <div class="form-row">
                     <!-- colocando os campos lado a lado -->
                     <div class="form-group col-md-6">
@@ -49,8 +55,8 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="enviar">Envie fotos do local:</label>
-                        <input type="file" name="upload" id="upload" class="form-control-file">
+                        <label for="arquivo">Envie fotos do local:</label>
+                        <input type="file" name="arquivo" id="upload" class="form-control-file">
                         <small class="form-text">Para enviar mais de 1 foto, compacte-as em um arquivo .RAR</small>
                     </div>
                 </div>
