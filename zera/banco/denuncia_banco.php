@@ -1,62 +1,39 @@
 <?php
-    // conexão
-    $conn = new mysqli("localhost","root","","sisweb");
-    
-    // testando a conexão
-    // if($conn->connect_error){
-    //     die("sem conexão".mysqli_connect_error());
-    // }
-    // else{
-    //     echo "<script>window.alert('conexão bem sucedida!');</script>";
-    // }
-   
-    // recebendo os valores do formulário
-    $stranger = $_POST['stranger'];
-    $descricao = $_POST['desc'];
+    // conectando ao banco de dados
+    require_once "connectar_banco.php";
+
+    // recebendo dados do formulário
+    $cpf = $_POST['cpf'];
     $endereco = $_POST['endereco'];
-    $logradouro = $_POST['logradouro'];
-       
-    // valores padrões
-    $msg = "indefinido";
-    $status_indefinido = 'enviado';
-    $resposta = 'analisando situação';
-    
-    // enviando os dados para o banco
-    $sql_insert = "INSERT INTO `denuncias` VALUES(
-        `$stranger`,
-        `$descricao`,
-        `$endereco`,
-        `$logradouro`,
-        `$msg`,
-        `$status_indefinido`,
-        `$resposta`
+    $desn = $_POST['desc'];
+    $img = "imagem não tratada";
+    $sts = "enviado";
+    $respo = "em análise";
+    $autenticado = false;
+
+    // inserindo dados
+    $sql_insert = "INSERT INTO denuncias VALUES(
+        '$cpf',
+        '$endereco',
+        '$desn',
+        '$img',
+        '$sts',
+        '$respo',
+        '$autenticado'
     )";
-       
-    
-    // testando a inserção dos dados
-    if($conn->query($sql_insert)===TRUE){
-        echo "dados inseridos";
+
+    // testando se deu certo
+    if($banco->query($sql_insert)===TRUE){
+        echo "<script>
+            window.alert('usuário cadastrado com sucesso!');
+            window.location.replace('../historico.php');
+        </script>";
+        // aqui, usamos um scrip js para redirecionar o usuário a página de histórico
     }
     else{
-        echo "falha de novo porra".$sql_insert.$conn->error;
+        echo "não foi possível inserir dados";
+        die();
+        // caso não seja possível inserir os dados, irá aparecer essa mensagem.
     }
-
-    // if($banco->query($sql_insert)===TRUE){
-    //     echo "<script>
-    //         window.alert('usuário cadastrado com sucesso!');
-    //         window.location.replace('../denuncia.php');
-    //     </script>";
-    //     // aqui, usamos um scrip js para redirecionar o usuário a página de denuncias
-    // }
-    // else{
-    //     echo "não foi possível inserir dados";
-    //     echo 'Código de erro:'.mysqli_errno( $banco ).'<br>';
-    //     echo 'Mensagem de erro:'.mysqli_error( $banco ).'<br>';
-    //     die();
-    //     // caso não seja possível inserir os dados, irá aparecer essa mensagem.
-    // }
-
-   
-    
+    $banco->close();
 ?>
-

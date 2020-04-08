@@ -32,6 +32,7 @@
             $destino = 'fotos/ ' . $novoNome;
      
             // tenta mover o arquivo para o destino
+            
             if ( @move_uploaded_file ( $arquivo_tmp, $destino ) ) {
                 echo 'Arquivo salvo com sucesso em : <strong>' . $destino . '</strong><br />';
                 echo ' < img src = "' . $destino . '" />';

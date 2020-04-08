@@ -26,7 +26,7 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="ek">Digite seu CPF:</label>
-                        <input type="text" name="stranger" id="" class="form-control">
+                        <input type="text" name="cpf" id="" class="form-control" placeholder="Digite apenas números" maxlength="11">
                     </div>
                 </div>
                 <div class="form-row">
@@ -36,21 +36,11 @@
                         <input type="text" name="endereco" id="" class="form-control" placeholder="Rua das hortências, n 1020, centro, Vila matilde">
                         <small class="form-text">Seja o mais detalhado possível!</small>
                     </div>
-                    <div class="form-group col-sm-3">
-                            <label for="logradouro">Tipo de logradouro:</label>
-                            <select name="logradouro" id="" class="form-control">
-                                <option value="avenida">avenida</option>
-                                <option value="área">área</option>
-                                <option value="distrito">distrito</option>
-                                <option value="estrada">estrada</option>
-                                <option value="fazenda">fazenda</option>
-                            </select>
-                    </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-sm-9">
                         <label for="desc">Descreva a sua denuncia:</label>
-                        <textarea name="desc" id="desc" cols="20" rows="5" class="form-control"></textarea>
+                        <textarea name="desc" id="desci" cols="20" rows="5" class="form-control"></textarea>
                     </div>
                 </div>
                 <div class="form-row">
