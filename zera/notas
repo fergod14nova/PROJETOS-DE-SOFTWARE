@@ -1,0 +1,5 @@
+FUNÇÕES DO PHP
+
+isset() -> verifica se a variável foi criada, retorna v ou f;
+print_r() -> mostra os dados sem formatação
+Função mysqli_query(): Executa uma declaração SQL no banco de dados;
