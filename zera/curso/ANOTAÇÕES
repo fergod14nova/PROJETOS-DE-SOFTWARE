@@ -1,0 +1,33 @@
+<!-- CRIANDO SISTEMA DE LOGIN -->
+<?php
+    // começando esta bosta
+    $link = new mysqli("localhost","root","","boson");
+    $logar = $_POST['logar'];
+    if($_POST['frm_nome'] and $_POST['frm_senha'] <> ""){
+    // caso o array valor e o request valor forem iguais a enviado, execute o bloco a seguir
+        // if(isset($logar)){
+            $buscar_login = "SELECT * FROM administradores WHERE nome='$_POST['frm_nome']'and senha = '$_POST['frm_senha']';" or die("Erro!");
+            $verificar = mysqli_query($link,$buscar_login);
+            // $log = mysqli_affected_rows($link);
+            $log = mysqli_num_rows($verificar);
+
+        // }
+        if($log <= 0 || $log >1){
+
+        }
+        else{
+            // iniciando sessão
+        session_start();
+
+        // criando variáveis de sessão
+        $_SESSION['nome'] = $_POST['frm_nome'];
+        $_SESSION['senha'] = $_POST['frm_senha'];
+
+        // REDIRECIONANDO PARA PRÓXIMA PÁGINA
+        echo "<script>
+            window.alert('Usuário Logado com sucesso!');
+            window.location.href='index_admin.php';
+        </script>";
+        }
+    }
+?>
