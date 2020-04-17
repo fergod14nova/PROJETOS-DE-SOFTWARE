@@ -11,51 +11,77 @@
 <body>
     
     <?php
-        include_once "header.php";
+        include_once "header.php"; // inserindo o menu de navegação
+     
     ?>
-
-    <!-- <div class="dropdown-divider"></div>  -->
-
     <div class="container">
-        <h1>Sistema de Denúncias de Foco de Dengue</h1>
-        <h3>Assista o vídeo abaixo para entender melhor os sintomas da dengue</h3>
-    </div>
-
-    <!-- <div class="embed-responsive-item">
-        <iframe class="embed-responsive" width="560" height="315" src="https://www.youtube.com/embed/NWvkpEg1TN0?controls=0?&autoplay=1" allow="accelerometer; autoplay=1; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <div class="container">
-            <p>Site: <a href="https://drauziovarella.uol.com.br/doencas-e-sintomas/dengue/">https://drauziovarella.uol.com.br/doencas-e-sintomas/dengue/</a> (acessado em 28 jan. 2020) a dengue pode se assemelhar a uma gripe forte, mas há quadros que podem levar a óbito. 
-            </p>
-            </div> 
-    </div> -->
-    <!-- BLOCO DESATIVADO POR ENQUANTO -->
-    <div class="container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/NWvkpEg1TN0?controls=0?&autoplay=1" allow="accelerometer; autoplay=1; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <div class="container">
-            <p>
-                Site: <a href="https://drauziovarella.uol.com.br/doencas-e-sintomas/dengue/">https://drauziovarella.uol.com.br/doencas-e-sintomas/dengue/</a> (acessado em 28 jan. 2020) a dengue pode se assemelhar a uma gripe forte, mas há quadros que podem levar a óbito. 
-            </p>
+        <h1>Bem vindo(a) <?php echo"$nome"; ?>!</h1>
+        <div class="dropdown-divider"></div>
+        <!-- DADOS PESSOAIS -->
+        <h3>Dados Pessoais:</h3>
+        
+        <div class="table-responsive">
+            <table class="table">
+            <!-- MOSTRANDO DADOS DO USUÁRIO -->
+                <thead class="thead-dark">
+                    <!-- cabelalho da tabela -->
+                    <tr>
+                        <th>Nome Completo:</th>
+                        <th>CPF:</th>
+                        <th>RG:</th>
+                        <th>Endereço:</th>
+                        <th>Telefone:</th>
+                        <th>E-mail:</th>
+                    </tr>
+                </thead>
+                <tbody class="table-hover">
+                    <tr>
+                        <?php
+                            // inserindo os dados do usuário
+                            echo "<td>".$nome."</td>";
+                            echo "<td>".$cpf."</td>";
+                            echo "<td>".$rg."</td>";
+                            echo "<td>".$endereco.",".$bairro.", ".$cidade." - ".$uf."</td>";
+                            echo "<td>".$telefone."</td>";
+                            echo "<td>".$email."</td>";
+                        ?>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-    </div>
 
-    <div class="container sintomas">
-        <h4>SINTOMAS DA DENGUE</h4>
-        <ul class="list-unstyled">
-            <li>febre alta (39° a 40°C)</li>
-            <li>dor de cabeça</li>
-            <li>Cansaço</li>
-            <li>dor muscular e nas articulações</li>
-            <li>Indisposição</li>
-            <li>enjôos</li>
-            <li>Vômitos</li>
-            <li>Entre outros</li>
-        </ul>
-    </div>
-    
+        <p>
+            Por favor confira os seus dados abaixo, caso não estejam corretos, clique no botão
+                
+                <a href="#" class="btn btn-warning" role="button" id="dropdownMenuLink" aria-haspopup="true" aria-expanded="false">
+                    ALTERAR DADOS
+                </a>
+
+        </p>
+
+        <!-- DIVISÓRIA -->
+        <div class="dropdown-divider"></div>
+
+        <!-- AGORA VAMOS MOSTRAR AS DENUNCIAS QUE O MESMO JÁ FEZ -->
+        <h3>Suas Denuncias:</h3>
+
         <?php
-            include_once "footer.php"
+            include "resultado_historico.php";
         ?>
-    
+        <p>
+            O resultado da sua denuncia pode demorar até 5 dias úteis. A cidade de <?php echo $cidade." - ".$uf;?> agradeçe!
+                
+                <!-- <a href="denuncia.php" class="btn btn-danger" role="button" id="dropdownMenuLink" aria-haspopup="true" aria-expanded="false">
+                    FAZER NOVA DENUNCIA
+                </a> -->
 
+        </p>
+
+        <div class="dropdown-divider"></div>
+        <h3>Nova Denuncia:</h3>
+        <?php
+            include_once "denuncia.php";
+        ?>
+    </div>
 </body>
 </html>

@@ -18,7 +18,7 @@
                     <!-- Cabeçalho da tabela -->
                     <tr>
                         <!-- Primeira linha -->
-                        <th scope="col">CPF:</th>
+                        <th scope="col">ID:</th>
                         <th scope="col">Local</th>
                         <th scope="col">Descrição</th>
                         <th scope="col">Imagens</th>
@@ -30,8 +30,9 @@
                 <tbody>                 
 
                         <?php
-                            // recebendo os dados do formulário
-                            $cpf = $_POST['cpf'];
+                            // pegando cpf do banco usando a página sessão.php
+                            include_once "sessao.php";
+
 
                             // consultando banco
                             $sql = "SELECT * FROM denuncias WHERE cpf='$cpf'";
@@ -41,7 +42,7 @@
                             while ($registro = mysqli_fetch_array($resultado)){
 
                                 // aqui eu vou criar variáveis que vão armazenar os campos da consulta, obs, dados vindos do banco de dados
-                                $cpf_resultado = $registro['cpf'];
+                                $id_resultado = $registro['id_denuncia'];
                                 $endereco_resultado = $registro['endereco'];
                                 $desn_resultado = $registro['desn'];
                                 $img_resultado = $registro['img'];
@@ -50,7 +51,7 @@
 
                                 // inserindo na tabela
                                 echo "<tr>";
-                                echo "<td>".$cpf_resultado."</td>";
+                                echo "<td>".$id_resultado."</td>";
                                 echo "<td>".$endereco_resultado."</td>";
                                 echo "<td>".$desn_resultado."</td>";
                                 echo "<td>".$img_resultado."</td>";

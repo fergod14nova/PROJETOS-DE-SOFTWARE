@@ -1,5 +1,7 @@
 <?php
-    require_once "connectar_banco.php";
+    require_once "connectar_banco.php"; //conexão com o banco de dados
+
+    // ESSA PÁGINA RECEBE OS DADOS DO FORMULÁRIO DE CADASTRO 
 ?>    
 
 <?php
@@ -33,8 +35,19 @@
         '$autenticado'
     )";
 
-    // testando se deu certo
-    if($banco->query($sql_insert)===TRUE){
+    // impedindo o cadastro de um usuário já cadastrado
+    $verifica = "SELECT * FROM usuarios WHERE cpf='$cpf';"; //QUERY MYSQL
+    $sql = mysqli_query($banco,$verifica); //inserindo query no banco
+    if($resultado = mysqli_fetch_array($sql)>=1){ //vendo se deu certo, caso retorne um número de linhas afetadas
+        // nesse caso não tem o ! de negação, pois queremos sabe se há linhas afetadas
+        echo "<script>
+            window.alert('ERRO: usuário Já cadastrado!');
+            window.location.replace('../form-cad.php');
+        </script>";
+    }
+
+    // CASO DÊ CERTO
+    elseif($banco->query($sql_insert)===TRUE){ //maneira Orientada a Objetos para ver se houve linhas afetadas pela query
         echo "<script>
             window.alert('usuário cadastrado com sucesso!');
             window.location.replace('../denuncia.php');
@@ -42,7 +55,7 @@
         // aqui, usamos um scrip js para redirecionar o usuário a página de denuncias
     }
     else{
-        echo "não foi possível inserir dados";
+        echo "FALHA AO INSERIR DADOS";
         die();
         // caso não seja possível inserir os dados, irá aparecer essa mensagem.
     }

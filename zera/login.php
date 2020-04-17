@@ -69,21 +69,21 @@
     <div class="externo">
         <div class="interno">
                 
-              <form action="acesso_banco.php" method="POST">
+              <form action="banco/seguranca.php" method="POST">
                   <!-- acima estou encaminhando esse formulário para o arquivo que contém os dados do banco de dados, o método para envio das informações será POST -->
                   <legend id="leg"><img src="img/logo.png" alt="acessar o sistema" class="img" id="logo"></legend>
                   <!-- aqui estou colocando uma imagem como título do form -->
                   
                   <div class="form-group">
                       <label for="email">Digite o seu E-Mail:</label>
-                      <input type="email" name="email" id="form-email" class="form-control" placeholder="aluno@gmail.com">
+                      <input type="email" name="frm_email" id="form-email" class="form-control" placeholder="aluno@gmail.com">
                   </div>
                   <div class="form-group">
                       <label for="senha">Digite sua Senha:</label>
-                      <input type="password" name="senha" id="form-senha" class="form-control" placeholder="********">
+                      <input type="password" name="frm_senha" id="form-senha" class="form-control" placeholder="********">
                   </div>
                   
-                  <a href="recomperar-senha.php" class="">Perdeu a senha?</a>
+                  <a href="sobre.php" class="">Perdeu a senha?</a>
 
                   <div class="dropdown-divider"></div>
 

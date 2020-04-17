@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/icon/favicon.ico" />
+    <link rel="shortcut icon" href="../img/icon/favicon.ico"/>
     
     <title>Zer@Dengue</title>
 
@@ -37,49 +37,53 @@
 </head>
 
 <body>
-
-    <div class="col-xs-2 col-md-2">
-        <img src="img/logo.png" alt="" class="img-fluid" id="img">
-    </div>
     
-    <div class="d-flex flex-row-reverse bd-highlight" id="img">
-        
-        <!-- essa propriedade é o que deixa o menu na direita -->
-
-        
-        <!-- Cores dos botões segundo o bootstrap
+    <div class="d-flex flex-row bd-highlight" id="img">
+    <!-- 
+        para deixar o menu a direita coloque 'flex-row-reverse';
+         Cores dos botões segundo o bootstrap:
             primary - Azul
             secondary - Cinza
             success - Verde
             info - Azul claro
             warning - Amarelo
             danger - Vermelho
-        -->
+     -->
         
         <!-- -----------------------------Botões do menu------------------------------- -->
-        <!-- Principal -->
+
+        <!-- 
+            ATENÇÃO: CUIDADO COM A DIV ABAIXO, TENHO QUE USAR MYSQL PARA EDITAR O SEU CONTEÚDO
+         -->
+
+        <!-- Perfil do usuário -->
+        <?php
+            session_start();
+            if(!$_SESSION['autenticado']){
+                echo "<script>
+                    window.alert('Usuário Não Logado!');
+                    window.location.href='login.php';
+                </script>";
+                session_destroy();
+            }
+            $user = $_SESSION['email'];
+            include_once "sessao.php";
+        ?>
+        
+        <!-- 
+            ATENÇÃO: CUIDADO COM A DIV ABAIXO, TENHO QUE USAR MYSQL PARA EDITAR O SEU CONTEÚDO
+         -->
+
         <div class="btn-group">
             <div class="dropdown">
-                <a href="home.php" class="btn btn-dark btn-lg" role="button" id="dropdownMenuLink" aria-haspopup="true" aria-expanded="false">PÁGINA PRINCIPAL</a>
+                <a href="home.php" class="btn btn-outline-primary btn-lg" role="button" id="dropdownMenuLink" aria-haspopup="true" aria-expanded="false">PÁGINA PRINCIPAL</a>
             </div>
         </div>
 
-        <!-- Primeiro Botão -->
-        <div class="btn-group">
-            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Sobre
-            </button>
-            <!-- opção do botão acima -->
-            <div class="dropdown-menu">
-                <a href="sobre.php" class="dropdown-item">Contatos</a>
-                <a href="zera.html" class="dropdown-item">Sistema Zera</a>
-            </div>
-        </div>
-        <!-- fim do primeiro botão -->
 
         <!-- segundo botão -->
         <div class="btn-group">
-            <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Denúncia
             </button>
             <!-- opção do botão acima -->
@@ -88,41 +92,10 @@
                 <a href="historico.php" class="dropdown-item">Consultar Denúncia</a>
             </div>
         </div>
-        <!-- fim do  segundo botão -->
-
-        <!-- <div class="btn-group">
-            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Entrar
-            </button>
-            
-            <div class="dropdown-menu">
-                <a href="#" class="dropdown-item">Já tenho conta</a>
-                <a href="#" class="dropdown-item">criar conta</a>
-                
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">Administrador</a>
-            </div>
-        </div> -->
-
-
-
-
-        <!-- 
-            ATENÇÃO: CUIDADO COM A DIV ABAIXO, TENHO QUE USAR MYSQL PARA EDITAR O SEU CONTEÚDO
-         -->
-        <!-- Perfil do usuário -->
+        
         <div class="btn-group">
-            <button type="button" class="btn btn-lg btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                User
-            </button>
-            <div class="dropdown-menu">
-                <li class="dropdown-item">Endereço:</li>
-                <li class="dropdown-item">CPF:</li>
-                <li class="dropdown-item">Telefone:</li>
-            <div class="dropdown-divider"></div>
-                <a href="" class="dropdown-item">Alterar Dados</a>
-                <a href="home.php" class="dropdown-item">Voltar</a>
-                <a href="index.php" class="dropdown-item">Sair</a>
+            <div class="dropdown">
+                <a href="deslogar.php" class="btn btn-outline-danger btn-lg" role="button" id="dropdownMenuLink" aria-haspopup="true" aria-expanded="false">SAIR</a>
             </div>
         </div>
         <!-- fim do ultimo botão -->
@@ -131,7 +104,5 @@
 
     <div class="dropdown-divider"></div>
 
-    
-    
 </body>
 </html>

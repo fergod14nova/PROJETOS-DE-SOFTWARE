@@ -72,7 +72,7 @@
     <div class="container">
         
         <div class="form-group">
-            <form action="/banco/cadastro_banco.php" method="POST">
+            <form action="banco/cadastro_banco.php" method="POST">
             <a href="index.php"><img src="img/logo.png" alt="" id="logo" class="img-fluid"></a>
                 <!-- o comando acima esta direcionando os dados para um arquivo chamado de cadastro_banco.php, o método de envio é POST -->
                 <div class="dropdown-divider"></div>
